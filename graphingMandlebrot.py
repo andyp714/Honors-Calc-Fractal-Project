@@ -5,7 +5,7 @@ import numpy as np
 def main():
     a = complexNumber([1,2])
     b = complexNumber([-2,2])
-    c = a*a
+    c = a+b
     print(c.valueList)
     c.printComplex()
 

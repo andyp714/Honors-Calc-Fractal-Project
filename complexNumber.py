@@ -14,9 +14,5 @@ class complexNumber():
 
     def __mul__(self, otherComplex):
         return complexNumber([(self.realValue * otherComplex.realValue) - (self.imaginaryValue * otherComplex.imaginaryValue), (self.realValue * otherComplex.imaginaryValue) + (self.imaginaryValue * otherComplex.realValue)])
-    
-a = complexNumber([1,2])
-b = complexNumber([-2,2])
-c = a*a
-print(c.valueList)
-c.printComplex()
+
+

@@ -4,12 +4,13 @@ import numpy as np
 
 def main():
     maxIterations = 20
-    pixelDensity = 40
-    realValues = np.linspace(-5,5, 10 * pixelDensity)
-    imaginaryValues =  np.linspace(-5,5, 10 * pixelDensity)
-
-    print(convergeCheck(complexNumber([0,0]), complexNumber([0,0]), 100))
-
+    pixelDensity = 80
+    xmin = -2
+    xmax = 1.5
+    ymin = -1.5
+    ymax = 1.5
+    realValues = np.linspace(xmin,xmax, int(xmax-xmin) * pixelDensity)
+    imaginaryValues =  np.linspace(ymin,ymax, int(ymax-ymin) * pixelDensity)
 
     realPoints = []
     imagPoints = []
@@ -21,7 +22,8 @@ def main():
                 realPoints.append(i)
                 imagPoints.append(j)
 
-    plt.scatter(realPoints,imagPoints)
+    plt.scatter(realPoints,imagPoints, color='black', marker=',', s=1)
+    plt.tight_layout()
     plt.show()
               
 

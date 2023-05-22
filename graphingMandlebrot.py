@@ -3,27 +3,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def main():
-    maxIterations = 100
-    pixelDensity = 1
+    maxIterations = 20
+    pixelDensity = 40
     realValues = np.linspace(-5,5, 10 * pixelDensity)
     imaginaryValues =  np.linspace(-5,5, 10 * pixelDensity)
+
+    print(convergeCheck(complexNumber([0,0]), complexNumber([0,0]), 100))
 
 
     realPoints = []
     imagPoints = []
     for i in realValues:
           for j in imaginaryValues:
-            converge = True
             z = complexNumber([0,0])
             c = complexNumber([i,j])
-            for k in range(maxIterations):
-                z = mandleFunc(z,c)
-                if z.distance > 10:
-                    converge = False
-                    print('broke')
-                    break
-            if converge == True:
-                print(i,j)
+            if convergeCheck(z,c, maxIterations) == True:
                 realPoints.append(i)
                 imagPoints.append(j)
 
@@ -35,8 +29,14 @@ def main():
     
 
 
-def convergeCheck(z,c):
-        return (z*z) + c
+def convergeCheck(z,c, maxIterations):
+        for i in range(maxIterations):
+            z = (z*z) + c
+            if z.distance > 10:
+                return False
+                break
+        return True
+
 
 
 

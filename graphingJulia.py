@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def main():
-     c = complexNumber([-0.162,1.04])
+     c = complexNumber([-0.79,.15])
      if convergeCheck(complexNumber([0,0]), c, maxIterations=40) == True:
         maxIterations = 20
-        pixelDensity = 200
+        pixelDensity = 100
         xmin = -5
         xmax = 5
         ymin = -1.5

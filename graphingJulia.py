@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def main():
-     c = complexNumber([-0.79,.15])
+     c = complexNumber([-0.79,.10])
      if convergeCheck(complexNumber([0,0]), c, maxIterations=40) == True:
         maxIterations = 20
         pixelDensity = 100
@@ -23,8 +23,10 @@ def main():
                 imagPoints.append(j)
 
         plt.scatter(realPoints,imagPoints, color='black', marker=',', s=1)
+        plt.title(f'C = {c.realValue} + {c.imaginaryValue}i')
         plt.tight_layout()
         plt.show()
+        
      else:
         print("Invalid Number")
         

@@ -6,7 +6,7 @@ def main():
      c = complexNumber([-0.391,-0.587])
      if convergeCheck(complexNumber([0,0]), c, maxIterations=40) == True:
         maxIterations = 20
-        pixelDensity = 10
+        pixelDensity = 100
         xmin = -5
         xmax = 5
         ymin = -1.5

@@ -4,7 +4,7 @@ import numpy as np
 
 def main():
     maxIterations = 20
-    pixelDensity = 40
+    pixelDensity = 200
     xmin = -2
     xmax = 1.5
     ymin = -1.5
